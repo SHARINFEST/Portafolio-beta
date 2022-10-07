@@ -1,0 +1,93 @@
+:root {
+  --bg: #1b2430;
+  --bg-table: #007bff;
+  --bg-token: #e84959;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: #fff;
+  gap: 1em;
+}
+
+main > img {
+  width: 250px;
+}
+
+.container_table {
+  border: 1px solid transparent;
+  padding: 1em;
+  border-radius: 1em;
+  background-color: var(--bg-table);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.container_table > div {
+  border: 1px solid transparent;
+  width: 100px;
+  height: 100px;
+  border-radius: 1em;
+  background-color: var(--bg-token);
+  font-size: 2em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .container_table > div {
+      width: 50px;
+      height: 50px;
+  }
+
+  main > img {
+      width: 200px;
+  }
+
+  main {
+      flex-direction: column-reverse;
+  }
+}
+
+/* Escribe aqui tu codigo CSS */
+.container_table div:nth-child(1) {
+}
+
+.container_table div:nth-child(2) {
+}
+
+.container_table div:nth-child(3) {
+}
+
+.container_table div:nth-child(4) {
+}
+
+.container_table div:nth-child(5) {
+}
+
+.container_table div:nth-child(6) {
+}
+
+.container_table div:nth-child(7) {
+}
+
+.container_table div:nth-child(8) {
+}
+
+.container_table div:nth-child(9) {
+}

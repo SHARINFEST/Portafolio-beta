@@ -1,0 +1,181 @@
+html {
+    font-family: sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    max-width: 692px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+}
+
+.img-container {
+    width: 450px;
+    margin: 0 auto;
+}
+
+.container {
+    display: grid; /* grid | inline-grid */
+    width: 100%;
+    min-height: 85vh;
+    background-color: lightcoral;
+    border: 1px solid orangered;
+
+    grid-template-columns: auto auto auto auto;
+    /* Establece el  de cada columna */
+    grid-template-rows: auto auto auto;
+    /* Establece el  de cada fila */
+
+    /* Unidad fracción restante (fr fracción de espacio restante en el grid.) */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    /* Se pueden combinar varias unidades diferentes, pudiendo utilizar píxeles (px) y fracciones restantes (fr), porcentajes (%) y fracciones restantes (fr) o combinaciónes similares. */
+
+    /* Filas y columnas repetitivas */
+    /*
+  En algunos casos, en las propiedades grid-template-columns y grid-template-rows podemos necesitar indicar las mismas cantidades un número alto de veces, resultando repetitivo y molesto. Se puede utilizar la expresión repeat() para indicar repetición de valores, indicando el número de veces que se repiten y el tamaño en cuestión.
+
+  repeat([núm de veces], [valor o valores]):
+  */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    /* Ajuste automático de celdas */
+    /*
+  Es posible utilizar las propiedades grid-auto-columns y grid-auto-rows para darle un tamaño automático a las celdas de la cuadrícula. Para ello, sólo hay que especificar el tamaño deseado en cada una de las propiedades. Además, también podemos utilizar grid-auto-flow para indicar el flujo de elementos en la cuadrícula, y especificar por donde se irán añadiendo. Las propiedades son las siguientes:
+  */
+    grid-template-rows: repeat(2, 1fr);
+
+    grid-auto-flow: row; /* row | column | dense */
+
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    grid-template-columns: repeat(4, minmax(min(10%, 100px), 1fr));
+
+    /* ajuste automático - cubre las columnas y llena el espacio disponible */
+    /* grid-template-columns: repeat(auto-fit, minmax(min(10%, 100px), 1fr));  */
+
+    /* autocompletado - cubre las columnas sin ocupar todo el espacio disponible */
+    /* grid-template-columns: repeat(auto-fill, minmax(min(10%, 100px), 1fr));  */
+
+    /* Huecos en grid */
+    /* Establece el  de los huecos entre columnas (líneas verticales). */
+    /* column-gap: 16px;  */
+    /* Establece el  de los huecos entre filas (líneas horizontales). */
+    /* row-gap: 16px;  */
+
+    /* Atajo: Grid
+  gap: <row-gap> <column-gap>
+  gap: <rowcolumn-gap>
+  */
+
+    /* Posición en el grid */
+    /* grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(3, 150px);
+  grid-auto-rows: 150px; */
+
+    /* Estas propiedades se aplican sobre el elemento contenedor padre, pero afectan a los ítems hijos, por lo que actuan sobre la distribución de cada uno de los hijos. */
+
+    /* Distribuye los elementos en el eje horizontal. */
+    justify-items: stretch; /* start | end | center | stretch */
+    /* justify-items: start;
+  justify-items: end;
+  justify-items: center; */
+
+    /* Distribuye los elementos en el eje vertical. */
+    align-items: stretch; /* start | end | center | stretch */
+    /* align-items: start;
+  align-items: end;
+  align-items: center; */
+
+    /* También podemos utilizar las propiedades justify-content o align-content para modificar la distribución de todo el contenido en su conjunto, y no sólo de los ítems por separado */
+    justify-content: stretch; /* start | end | center | stretch | space-around | space-between | space-evenly */
+    /* justify-content: start;
+  justify-content: end;
+  justify-content: center;
+  justify-content: space-around;
+  justify-content: space-between;
+  justify-content: space-evenly; */
+
+    /* min-height: 100vh; */
+
+    align-content: stretch; /* start | end | center | stretch | space-around | space-between | space-evenly */
+    /* align-content: start;
+  align-content: end;
+  align-content: center;
+  align-content: space-around;
+  align-content: space-between;
+  align-content: space-evenly; */
+
+    /* Atajo: posiciones grid
+  place-items: <align-items> <jusitfy-items>
+  place-content: <align-content> <jusitfy-content>
+  */
+}
+
+/* Atajo: Grid
+  grid: <grid-template> <grid-auto-flow> <grid-auto-rows> / <grid-auto-columns>
+*/
+
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightsalmon;
+    border: 2px solid white;
+    outline: 1px solid orangered;
+    /* padding: 20px; */
+}
+
+/* Propiedades para ítems hijos */
+
+.container div:nth-child(1) {
+    background-color: greenyellow;
+    /* Altera la justificación del ítem hijo en el eje horizontal. */
+    justify-self: stretch; /* stretch | start | end | center */
+
+    /* Altera la alineación del ítem hijo en el eje vertical. */
+    align-self: stretch; /* stretch | start | end | center */
+}
+
+.container div:nth-child(10) {
+    background-color: aqua;
+    /* grid-column-start: 3; */
+    /* grid-column-end: 5;  */
+    /* grid-column-end: span 2; */
+    /* grid-column-end: -1; */
+
+    /* Atajo: grid-column 
+    grid-column: <grid-column-start> <grid-column-end>
+  */
+
+    grid-column: 3 / 5;
+    grid-column: 3 / span 2;
+}
+
+.container div:nth-child(6) {
+    background-color: crimson;
+    /* grid-column: 2 / 3;
+
+  grid-row-start: 2;
+  grid-row-end: span 2; */
+
+    /* Atajo: grid-row 
+    grid-row: <grid-row-start> <grid-row-end>
+  */
+}
