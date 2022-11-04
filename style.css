@@ -210,7 +210,7 @@ body{
   }
   
   .portfolio__father {
-    
+    margin: 15px;
     position: relative;
     object-fit: cover;
      overflow: hidden; 
@@ -218,14 +218,31 @@ body{
     border-radius: 10px;
     width: 200px;
     background-color: blue;
-    
-    /* width: 300px;
+
+
+    /* display: flex;
+    flex-wrap: nowrap;
+    width: 300px;
     height: 300px;
     margin-left: 4cm;
     margin-top: 4cm;
     position: relative;
     overflow: hidden; */
   }
+
+.rt{ 
+  margin-top: 0.5cm;
+  position: absolute;
+  display: block;
+  margin-left: 6.5cm;
+  font-size: 25px;
+  font-weight: bolder;
+}
+.rtr{
+  font-size: 20px;
+  font-weight: lighter;
+}
+  
 
   .portfolio__father:hover{
 background-color: red;
