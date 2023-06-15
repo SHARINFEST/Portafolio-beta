@@ -313,7 +313,7 @@
   }
   
   .portfolio__item {
-    background: white;
+    background: red;
     position: relative;
     object-fit: cover;
     overflow: hidden;
